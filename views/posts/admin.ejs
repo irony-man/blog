@@ -1,0 +1,23 @@
+<%- include('partials/postheader') %>
+<title>ADMIN | BLOG POST</title>
+<div class="row">
+ <% authors.reverse().forEach(author => { %>
+ <div class="col-lg-4 col-sm-6 mb-4">
+  <% if(dark==true){ %>
+  <a style="color: white;" href="/profile/<%= author._id%>">
+   <div class="card text-center bg-dark">
+    <% } %>
+    <% if (dark==false) { %>
+    <a style="color: black;" href="/profile/<%= author._id%>">
+     <div class="card text-center bg-light">
+      <% } %>
+      <div class="card-header bg-info">
+       <h4 data-toggle="tooltip" title="Add New"><%= author.username %></h4>
+      </div>
+      <div class="card-body"><strong><%= author.email %></strong></div>
+     </div>
+    </a>
+   </div>
+   <% }) %>
+ </div>
+ <%- include('partials/postfooter') %>

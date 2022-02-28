@@ -1,0 +1,81 @@
+<%- include('partials/postheader') %>
+<title>Profile | BLOG POST</title>
+<div class="profile">
+  <div class="dp">
+    <img class="dpimg" src="/user/<%= img %>" alt="">
+  </div>
+  <div class="name">
+    <h2><%= user %></h2>
+
+    <p style="margin-bottom: 5px;"><strong><i class="fas fa-envelope"></i> <%= email %></strong></p>
+    <div class="mb-1">
+      <% if(bio=="") { %>
+      <p style="font-weight: 300; margin-bottom: 0;">Tell something about yourself!! It will be shown on your profile!!
+        <a style="color: #17a2B8;" href="/profile/edit"> Add something here</a></p>
+      <% } %>
+      <% if(bio!="") { %>
+      <p style="font-weight: 300;"><strong>BIO: </strong><%= bio %> </p>
+      <% } %>
+    </div>
+    <div>
+      <p>Number of posts made by you: <%= posts.length %></p>
+    </div>
+    <div class="edit-button mb-5">
+      <a class="btn btn-outline-info" href="/profile/edit" data-toggle="tooltip" title="Edit Profile"><i
+          class="fas fa-edit"></i></a>
+      <a class="btn btn-outline-warning" href="/theme" data-toggle="tooltip" title="Change theme"><i
+          class="fas fa-adjust"></i></a>
+      <% if (email=="theblogpostbyshivam@gmail.com") { %>
+      <a class="btn btn-outline-success" href="/admin" data-toggle="tooltip" title="Admin"><i
+          class="fas fa-user-shield"></i></a>
+      <% } else { %>
+      <a class="btn btn-outline-success" href="/about" data-toggle="tooltip" title="About"><i
+          class="fas fa-blog"></i></a>
+          <% } %> 
+      <a class="btn btn-outline-danger" href="/logout" data-toggle="tooltip" title="Logout"><i
+          class="fas fa-sign-out-alt"></i></a>
+    </div>
+  </div>
+</div>
+<h3 class="mb-3 text-center">Your Posts</h3>
+<div class="row" style="justify-content: center; align-items: center;">
+  <% posts.reverse().forEach(post => { %>
+  <div class="col-lg-4 col-sm-6 mb-4">
+    <% if(dark==true){ %>
+    <a style="color: white;" href="/post/<%= post._id%>">
+      <div class="card bg-dark">
+        <% } %>
+        <% if (dark==false) { %>
+        <a style="color: black;" href="/post/<%= post._id%>">
+          <div class="card bg-light">
+            <% } %>
+            <div class="card-header bg-info">
+              <h4 data-toggle="tooltip" title="<%= post.title %>"><%= post.title.substring(0,20) %></h4>
+            </div>
+            <div class="card-body ">
+              <p data-toggle="tooltip" class="text-center" title="Read More"><%= post.content.substring(0, 100) %></p>
+              <p class="card-text"><small>Post modified at: <em><%= post.time %> </em></small></p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <% }) %>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <% if(dark==true){ %>
+        <a style="color: white;" href="/compose">
+          <div class="card text-center bg-dark">
+            <% } %>
+            <% if (dark==false) { %>
+            <a style="color: black;" href="/compose">
+              <div class="card text-center bg-light">
+                <% } %>
+                <div class="card-header bg-info">
+                  <h4 data-toggle="tooltip" title="Add New">Compose New</h4>
+                </div>
+                <div class="card-body" style="font-size: 30px;"><i class="fas fa-plus-square"></i></div>
+              </div>
+            </a>
+          </div>
+      </div>
+
+      <%- include('partials/postfooter') %>

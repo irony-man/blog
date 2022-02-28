@@ -1,0 +1,10 @@
+ </div>
+ <script>
+  $.get("/searching", function (data, status) {
+   $("#search").autocomplete({
+    source: data
+   });
+  });
+ </script>
+ </body>
+ </html>

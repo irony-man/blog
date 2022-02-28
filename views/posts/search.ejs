@@ -1,0 +1,11 @@
+<%- include('partials/postheader') %>
+<title>Search | BLOG POST</title>
+<form autocomplete="off" action="/search" class="form-inline" method="POST">
+ <div class="input-group ui-widget w-100">
+  <input id="search" class="form-control" type="text" name="search" placeholder="Search Users">
+  <div class="input-group-append">
+   <button type="submit" class="btn btn-info"><i class="fas fa-search"></i></button>
+  </div>
+ </div>
+</form>
+<%- include('partials/postfooter') %>

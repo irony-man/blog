@@ -1,0 +1,223 @@
+*{
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+.light-theme {
+   color: rgb(0, 0, 0);
+   background-color: rgb(235, 235, 235);
+}
+
+.light-theme .cancel,
+.light-theme .mobile a {
+   color: rgba(0, 0, 0, 0.7);
+}
+
+.light-theme .cancel:hover,
+.light-theme .mobile a:hover {
+   color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-theme {
+   color: white;
+   background-color: rgb(30, 30, 30);
+}
+
+.dark-theme .cancel,
+.dark-theme .mobile a {
+   color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .cancel:hover,
+.dark-theme .mobile a:hover {
+   color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-brand {
+   letter-spacing: 5px;
+}
+
+.navbar {
+   letter-spacing: 2px;
+}
+
+.navbar-nav a {
+   margin-left: 20px;
+}
+
+.profile {
+   display: flex;
+   margin: auto;
+   align-items: center;
+   padding: 0 15%;
+}
+
+.dp {
+   text-align: center;
+   flex: 2;
+}
+
+.dpimg {
+   border-radius: 50%;
+   border: 2px #17a2B8 solid;
+   width: 250px;
+   height: auto;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.edit-dp {
+   display: flex;
+   justify-content: center;
+}
+
+.name {
+   flex: 3;
+}
+
+
+.about {
+   display: flex;
+   text-align: center;
+}
+
+.changedp {
+   flex: 2;
+   display: flex;
+   flex-direction: column;
+}
+
+.editabout {
+   flex: 3;
+   text-align: left;
+}
+
+.edit-button a {
+   margin-right: 10px;
+}
+
+.mobile {
+   display: none;
+}
+
+input:focus .mobile {
+   display: none;
+}
+
+.cancel {
+   margin-left: 10px;
+   color: #000000;
+   background-color: transparent;
+   padding: 10px;
+   font-size: larger;
+}
+
+.cancel:hover {
+   text-decoration: none;
+   color: #000000;
+}
+
+.post-header {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 12%;
+}
+
+.content {
+   font-size: 21px;
+   font-family: Bona Nova;
+   white-space: pre-wrap;
+   padding: 0 15%;
+}
+
+.like{
+   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+   .edit {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      position: fixed;
+   }
+   .name{
+      margin-left: 20px;
+   }
+   .profile {
+      padding: 0 10%;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .dpimg {
+      width: 150px;
+      height: auto;
+   }
+
+   .openbtn {
+      display: block;
+   }
+
+   .lg a {
+      display: none;
+   }
+
+   .navbar-brand {
+      margin: auto;
+      letter-spacing: 2px;
+   }
+
+   p {
+      font-size: 14px;
+   }
+
+   .profile,
+   .about,
+   .post-header {
+      flex-direction: column;
+   }
+
+   h2 {
+      text-align: center;
+   }
+
+   .mobile {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      align-items: center;
+      position: fixed;
+      z-index: 1;
+   }
+
+   .mobile a {
+      flex: 1;
+   }
+
+   .mobile a:active {
+      color: white;
+   }
+
+   .post-header,
+   .content,
+   .profile {
+      padding: 0;
+   }
+
+   .content {
+      font-size: 18px;
+   }
+}

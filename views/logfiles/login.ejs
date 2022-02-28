@@ -1,0 +1,39 @@
+<%- include('partials/logheader') %>
+<title>Login | BLOG POST</title>
+<div class="home">
+  <div class="half">
+    <div class="login-box">
+      <div class="login">
+        <h1 class="mt-4" style="letter-spacing: 5px;">BLOG POST</h1>
+        <form class="mt-4 pr-3 pl-3" action="/login" method="POST">
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-info btn-block">Log In</button>
+        </form>
+        <hr style="height:2px; width:95%;">
+        <div class="register mb-3">
+          <p>Don't have an account? <a href="/register">Sign Up</a></p>
+          <a href="/forgotpassword">Forgot password?</a>
+        </div>
+      </div>
+      <div class="google-login mt-4">
+        <a style="color: #E94335; font-weight: 700;" href="/auth/google"><img style="margin-right: 10px;"
+            src="/images/google-logo.svg" alt="">
+          Continue with Google</a>
+      </div>
+      <div class="google-login mt-4">
+        <a style="color: #2E3192; font-weight: 700;" href="/about"><img style="margin-right: 10px;"
+            src="/images/icon.svg" alt="">
+          Know about BLOG POST</a>
+      </div>
+    </div>
+  </div>
+  <div class="other-half"></div>
+</div>
+</div>
+
+<%- include('partials/logfooter') %>

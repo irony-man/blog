@@ -1,0 +1,113 @@
+body,
+html {
+   height: 100%;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   background-image: url("/images/home-bg.jpg");
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+a {
+   color: #17a2B8;
+}
+
+a:hover {
+   text-decoration: none;
+   color: #17a2B8;
+}
+
+.form-control {
+   background-color: #f3f2f2;
+}
+
+.form-control:focus {
+   background-color: #f3f2f2;
+}
+
+.home {
+   display: flex;
+   height: 100%;
+}
+
+.half {
+   text-align: center;
+   position: relative;
+   flex: 2;
+}
+
+.login-box,
+.signup-box,
+.set-box,
+.forgot-box {
+   margin: auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.login,
+.signup,
+.set,
+.forgot,
+.google-login {
+   background-color: rgba(255, 255, 255, 0.2);
+   border: 1px solid rgb(216, 216, 216);
+   border-radius: 10px;
+   min-width: 350px;
+   margin: auto;
+}
+
+.login,
+.forgot,
+.set,
+.signup {
+   min-height: 100px;
+}
+
+
+.google-login {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 350px;
+   height: 50px;
+   margin: auto;
+}
+
+.google-login img {
+   width: 20px;
+   height: auto;
+}
+
+.google-login a {
+   padding: 0 50px;
+   display: flex;
+   align-items: center;
+}
+
+.other-half {
+   flex: 3;
+}
+
+@media only screen and (max-width: 1000px) {
+
+   .login,
+   .signup,
+   .google-login,
+   .set,
+   .forgot {
+      background-color: rgba(255, 255, 255, 0.7);
+   }
+
+   .other-half {
+      display: none;
+   }
+}

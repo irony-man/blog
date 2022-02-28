@@ -1,0 +1,30 @@
+<%- include('partials/postheader') %>
+<title>BLOG POST</title>
+
+<div class="row">
+ <% posts.reverse().forEach(post => { %>
+ <div class="col-lg-4 col-sm-6 mb-4">
+  <% if(dark==true){ %>
+  <a style="color: white;" href="/post/<%= post._id%>">
+   <div class="card bg-dark">
+    <% } %>
+    <% if (dark==false) { %>
+    <a style="color: black;" href="/post/<%= post._id%>">
+     <div class="card bg-light">
+      <% } %>
+      <div class="card-header bg-info">
+       <h4 data-toggle="tooltip" title="<%= post.title %>"><%= post.title.substring(0,20) %></h4>
+      </div>
+      <div class="card-body ">
+       <p data-toggle="tooltip" class="text-center" title="Read More"><%= post.content.substring(0,100) %>...</p>
+       <p class="card-text"><small>Post modified at: <em><%= post.time %></em></small></p>
+      </div>
+     </div>
+    </a>
+   </div>
+   <% }) %>
+   </div>
+   <% if(posts.length==0){ %>
+    <h6 class="text-center">No posts yet!! Be the first one to post!!</h6>
+    <% } %>
+   <%- include('partials/postfooter') %>

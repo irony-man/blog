@@ -1,0 +1,41 @@
+<%- include('partials/postheader') %>
+<title>Edit profile | BLOG POST</title>
+<div class="about">
+  <div class="changedp">
+    <div class="dp">
+      <img class="dpimg" src="/user/<%= img %>" alt="">
+    </div>
+    <% if(img!="default.svg"){ %> 
+    <div class="edit-dp">
+      <form action="/profile/edit" method="post" enctype="multipart/form-data">
+        <label for="image"><i class="fas fa-edit btn btn-outline-info" data-toggle="tooltip"
+            title="Change DP"></i></label>
+        <input type="file" name="image" id="image" style="display: none;">
+        <a class="btn btn-outline-danger ml-4" href="/profile/edit/removedp" data-toggle="tooltip" title="Remove DP"><i class="fas fa-trash"></i></a>
+    </div>
+    <% } %>
+    <% if(img=="default.svg"){ %>
+    <div class="edit-dp">
+      <form action="/profile/edit" method="post" enctype="multipart/form-data">
+        <label for="image"><i class="fas fa-plus-square btn btn-outline-info" data-toggle="tooltip"
+            title="Change DP"></i></label>
+        <input type="file" name="image" id="image" style="display: none;">
+    </div>
+    <% } %>
+  </div>
+
+  <div class="editabout">
+    <div class="form-group">
+      <label for="bio"><strong>NAME</strong></label>
+      <input type="text" class="form-control" name="username" value="<%= name %>" required>
+    </div>
+    <div class="form-group">
+      <label for="bio"><strong>BIO</strong> (should be less than 200 characters)</label>
+      <textarea maxlength="200" name="bio" class="form-control" rows="5"><%= bio %></textarea>
+    </div>
+    <button type="submit" class="btn btn-info mr-3">Save changes</button>
+    </form>
+    <a class="btn btn-danger" href="/profile">Cancel</a>
+  </div>
+</div>
+<%- include('partials/postfooter') %>

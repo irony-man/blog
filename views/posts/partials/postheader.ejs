@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/united/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/css/post-style.css">
+  <link rel="icon" href="/images/icon.svg" type="image/x-icon">
+</head>
+
+<% if(dark==true){ %>
+<body class="dark-theme">
+  <nav class="navbar fixed-top navbar-expand navbar-dark bg-dark">
+    <% } %>
+    <% if (dark==false) { %>
+    <body class="light-theme">
+      <nav class="navbar fixed-top navbar-expand navbar-light bg-light">
+        <% } %>
+        <div class="container">
+          <a class="navbar-brand" href="/">BLOG POST</a>
+          <ul class="navbar-nav">
+            <% if(link=="/"){ %>
+            <li class="nav-item lg lg-hide">
+              <a style="color: #17a2b8;" class="nav-link" href="/">YOUR FEED</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/search">SEARCH</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/compose">COMPOSE NEW</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/profile">PROFILE</a>
+            </li>
+            <% } else if(link=="/compose"){ %>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/">YOUR FEED</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/search">SEARCH</a>
+            </li>
+            <li class="nav-item lg">
+              <a style="color: #17a2b8;" class="nav-link" href="#">COMPOSE NEW</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/profile">PROFILE</a>
+            </li>
+            <% } else if(link=="/search"){ %>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/">YOUR FEED</a>
+            </li>
+            <li class="nav-item lg">
+              <a style="color: #17a2b8;" class="nav-link" href="/search">SEARCH</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/compose">COMPOSE NEW</a>
+            </li>
+            <li class="nav-item lg">
+              <a class="nav-link" href="/profile">PROFILE</a>
+            </li>
+            <% } else if(link=="/profile"){ %>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/">YOUR FEED</a>
+              </li>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/search">SEARCH</a>
+              </li>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/compose">COMPOSE NEW</a>
+              </li>
+              <li class="nav-item lg">
+                <a style="color: #17a2b8;" class="nav-link" href="/profile">PROFILE</a>
+              </li>
+              <% } else { %>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/">YOUR FEED</a>
+              </li>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/search">SEARCH</a>
+              </li>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/compose">COMPOSE NEW</a>
+              </li>
+              <li class="nav-item lg">
+                <a class="nav-link" href="/profile">PROFILE</a>
+              </li>
+              <% } %>
+          </ul>
+        </div>
+      </nav>
+      <% if(dark==true) { %>
+      <div class="mobile bg-dark">
+        <% } %> 
+        <% if (dark==false) { %>
+        <div class="mobile bg-light">
+        <% } %>
+        <% if(link=="/"){ %>
+        <a style="color: #17a2B8" href="/"><i class="fas fa-warehouse"></i></a>
+        <a href="/search"><i class="fas fa-search"></i></a>
+        <a href="/compose"><i class="fas fa-plus-square"></i></a>
+        <a href="/about"><i class="fas fa-blog"></i></a>
+        <a href="/profile"><i class="fas fa-user"></i></a>
+        <% } else if(link=="/search"){ %>
+        <a href="/"><i class="fas fa-warehouse"></i></a>
+        <a style="color: #17a2B8;" href="/search"><i class="fas fa-search"></i></a>
+        <a href="/compose"><i class="fas fa-plus-square"></i></a>
+        <a href="/about"><i class="fas fa-blog"></i></a>
+        <a href="/profile"><i class="fas fa-user"></i></a>
+        <% } else if(link=="/compose"){ %>
+        <a href="/"><i class="fas fa-warehouse"></i></a>
+        <a href="/search"><i class="fas fa-search"></i></a>
+        <a style="color: #17a2B8;" href="#"><i class="fas fa-plus-square"></i></a>
+        <a href="/about"><i class="fas fa-blog"></i></a>
+        <a href="/profile"><i class="fas fa-user"></i></a>
+        <% } else if(link=="/about"){ %>
+        <a href="/"><i class="fas fa-warehouse"></i></a>
+        <a href="/search"><i class="fas fa-search"></i></a>
+        <a href="/compose"><i class="fas fa-plus-square"></i></a>
+        <a style="color: #17a2B8;" href="/about"><i class="fas fa-blog"></i></a>
+        <a href="/profile"><i class="fas fa-user"></i></a>
+        <% } else if(link=="/profile"){%>
+        <a href="/"><i class="fas fa-warehouse"></i></a>
+        <a href="/search"><i class="fas fa-search"></i></a>
+        <a href="/compose"><i class="fas fa-plus-square"></i></a>
+        <a href="/about"><i class="fas fa-blog"></i></a>
+        <a style="color: #17a2B8;" href="/profile"><i class="fas fa-user"></i></a>
+        <% } else { %>
+        <a href="/"><i class="fas fa-warehouse"></i></a>
+        <a href="/search"><i class="fas fa-search"></i></a>
+        <a href="/compose"><i class="fas fa-plus-square"></i></a>
+        <a href="/about"><i class="fas fa-blog"></i></a>
+        <a href="/profile"><i class="fas fa-user"></i></a>
+        <% } %>
+      </div>
+      <div style="margin: 80px auto 50px;" class="container">
+        <% if(success_message!="") { %>
+        <div class=" alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= success_message %>
+        </div>
+        <% } %>
+        <% if(error_message!="") { %>
+        <div class=" alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= error_message %>
+        </div>
+        <% } %>
+        <% if(error!="") { %>
+        <div class=" alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= error %>
+        </div>
+        <% } %>
