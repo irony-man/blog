@@ -1,2 +1,2 @@
 # blog-post
-### theblogpost-shivam.herokuapp.com
+### http://theblogpost-shivam.herokuapp.com
