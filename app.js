@@ -47,7 +47,7 @@ app.use(flash());
 //mongoose
 //mongodb://localhost:27017//userDB
 //
-mongoose.connect("mongodb+srv://shivam:Shivam0401@blog.jdkd4.mongodb.net/userDB", {
+mongoose.connect(process.env.MONGOURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
